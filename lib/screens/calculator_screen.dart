@@ -4,6 +4,7 @@ import '../widgets/calc_button.dart';
 import 'bmi_screen.dart';
 import 'scientific_screen.dart';
 import 'converter_screen.dart';
+import 'graph_screen.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});
@@ -78,6 +79,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         backgroundColor: Colors.black,
         elevation: 0,
         actions: [
+          // Graphing Calculator Button
+          IconButton(
+            icon: const Icon(Icons.show_chart, color: Colors.white, size: 30),
+            tooltip: 'Graphing Calculator',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const GraphScreen()),
+            ),
+          ),
           // Unit Converter Button
           IconButton(
             icon: const Icon(Icons.swap_horiz, color: Colors.white, size: 30),
