@@ -3,6 +3,7 @@ import 'package:math_expressions/math_expressions.dart';
 import '../widgets/calc_button.dart';
 import 'bmi_screen.dart';
 import 'scientific_screen.dart';
+import 'converter_screen.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});
@@ -77,6 +78,16 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         backgroundColor: Colors.black,
         elevation: 0,
         actions: [
+          // Unit Converter Button
+          IconButton(
+            icon: const Icon(Icons.swap_horiz, color: Colors.white, size: 30),
+            tooltip: 'Unit Converter',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const ConverterScreen()),
+            ),
+          ),
+          // Scientific Mode Button
           IconButton(
             icon: const Icon(Icons.science_outlined, color: Colors.white, size: 28),
             tooltip: 'Scientific Calculator',
@@ -85,6 +96,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               MaterialPageRoute(builder: (_) => const ScientificScreen()),
             ),
           ),
+          // BMI Mode Button
           IconButton(
             icon: const Icon(Icons.monitor_weight_outlined, color: Colors.white, size: 30),
             tooltip: 'BMI Calculator',
